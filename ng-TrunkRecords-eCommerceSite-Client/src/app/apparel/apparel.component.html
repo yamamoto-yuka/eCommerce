@@ -1,14 +1,18 @@
 <app-header></app-header>
 <main>
   <section class="container">
-    <h3 class="mt-5  apparel-heading">APPAREL</h3>
+    <h3 class="mt-5 apparel-heading">APPAREL</h3>
     <div class="row">
       <div
         *ngFor="let product of products; let i = index"
         class="mt-5 col-sm-12 col-md-4 col-lg-4"
         [class.nonedisplay]="!product.product_display"
       >
-        <div class="apparel-item"  [routerLink]="['/apparel/', product.ProductID]" routerLinkActive="router-link-active">
+        <div
+          class="apparel-item"
+          [routerLink]="['/apparel/', product.ProductID]"
+          routerLinkActive="router-link-active"
+        >
           <img [src]="product.product_image1" [alt]="product.product_name" />
           <img [src]="product.product_image2" [alt]="product.product_name" />
         </div>

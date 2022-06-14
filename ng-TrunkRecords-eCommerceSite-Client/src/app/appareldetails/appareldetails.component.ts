@@ -10,10 +10,7 @@ import { CommonService } from '../services/common.service';
 export class AppareldetailsComponent implements OnInit {
   product: any;
 
-  constructor(
-    private param: ActivatedRoute,
-    private service: CommonService
-  ) {}
+  constructor(private param: ActivatedRoute, private service: CommonService) {}
 
   changeboolean(data: any) {
     if (data === 0) return true;

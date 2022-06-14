@@ -8,13 +8,5 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AvailabilityComponent implements OnInit {
   @Input() inStock: boolean = true;
   constructor() {}
-
-  // checkStock(){
-  //   if(!this.inStock){
-  //     document.getElementById('stock')!.innerHTML = 'Sold Out';
-  //     this.inStock = true;
-  //   }
-  // }
-
   ngOnInit(): void {}
 }
