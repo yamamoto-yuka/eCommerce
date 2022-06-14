@@ -1,0 +1,79 @@
+@url = http://localhost:4500
+
+GET http://localhost:4500/product
+
+###
+GET http://localhost:4500/product/1
+
+###
+POST  {{url}}/product
+Content-Type:  application/json
+
+{
+  "product_name":"test",
+  "product_desc":"test",
+  "product_price": 123,
+  "product_image1": "test",
+  "product_image2": "test",
+  "product_quantity": 12
+}
+
+
+###
+PUT {{url}}/product
+Content-Type:  application/json
+
+{
+  "ProductID":4,
+  "product_name":"test",
+  "product_desc":"test",
+  "product_price":123,
+  "product_image1":"test",
+  "product_image2":"test",
+  "product_quantity":1
+}
+
+###
+PUT {{url}}/displayupdate
+Content-Type:  application/json
+
+{
+  "ProductID":2
+}
+
+###
+GET {{url}}/product/2
+
+###
+DELETE  {{url}}/product/7
+
+
+###
+POST {{url}}/signup
+Content-Type: application/json
+
+{
+  "username":"Smith",
+  "password":234
+}
+
+###
+POST {{url}}/login
+Content-Type:  application/json
+
+{
+  "user_name":"Smith",
+  "password":234
+}
+
+
+###
+POST {{url}}/upload
+Content-Type: multipart/form-data; boundary=imageboundary
+
+--imageboundary
+Content-Disposition: form-data; name='image'; filename = "image1.jpg"
+Content-Type: image/png
+
+< ./image1.jpg
+--imageboundary

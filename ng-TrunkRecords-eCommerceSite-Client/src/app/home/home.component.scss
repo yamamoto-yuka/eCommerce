@@ -1,0 +1,37 @@
+.header-heroimg {
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: #a69b03;
+}
+
+.header-heroimg h1 {
+  font-family:'Epilogue', sans-serif;;
+  font-size: 6rem;
+  font-weight: bold;
+  color: #030a8c;
+}
+
+button{
+  height: 150px;
+  width: 150px;
+  border: 1px solid #030a8c;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  color: #030a8c;
+  background-color: #a69b03;
+}
+
+button:hover{
+  color: #fff;
+  background-color: #030a8c;
+}
+
+@media (max-width: 756px) {
+  .header-heroimg {
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+}

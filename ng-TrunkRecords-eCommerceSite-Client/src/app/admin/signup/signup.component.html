@@ -1,0 +1,90 @@
+<div class="container p-4">
+  <h1>Admin Panel</h1>
+  <h2>Sign Up</h2>
+  <form #form="ngForm" (ngSubmit)="signup(username, password1_, password2_)">
+    <div class="mb-3">
+      <label for="username" class="form-label">User Name</label>
+      <input
+        name="username"
+        #username_="ngModel"
+        [(ngModel)]="username"
+        id="username"
+        type="text"
+        class="form-control"
+        minlength="1"
+        required
+        placeholder="Username"
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="username_.touched && username_.invalid"
+    >
+      Please enter your Username.
+    </div>
+    <div class="mb-3">
+      <label for="password1" class="form-label">Password</label>
+      <input
+        name="password1"
+        #password1_="ngModel"
+        [(ngModel)]="password1"
+        id="password1"
+        type="password"
+        class="form-control"
+        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+        required
+        placeholder="Password" 
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="password1_.touched && password1_.invalid"
+    >
+      Password should contain at least 8 character, 1 number and 1 special
+      character.
+    </div>
+    <div class="mb-3">
+      <label for="password2" class="form-label">Confirm Password</label>
+      <input
+        name="password2"
+        #password2_="ngModel"
+        [(ngModel)]="password2"
+        id="password2"
+        type="password"
+        class="form-control"
+        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+        value="password2_.value"
+        placeholder="Confirm Password"
+        required
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="password2_.touched && password2_.invalid"
+    >
+      Password do not match!
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+      Sign Up
+    </button>
+    | <a routerLink="/login">LogIn</a>
+    <div
+      *ngIf="signupStatus"
+      [style.display]="showMessage"
+      [class.success]="signupStatus"
+    >
+      Sign up successful.
+    </div>
+    <div
+      *ngIf="!signupStatus"
+      [style.display]="showMessage"
+      [class.error]="!signupStatus"
+    >
+      Sorry, Something went wrong. Server responded with
+      {{ errorMessage.sqlMessage }}
+    </div>
+  </form>
+</div>

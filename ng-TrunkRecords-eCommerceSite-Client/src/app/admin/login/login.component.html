@@ -1,0 +1,68 @@
+<div class="container p-4">
+  <h1>Admin Panel</h1>
+  <h2>Log In</h2>
+  <form #form="ngForm" (ngSubmit)="login(username_, password_)">
+    <div class="mb-3">
+      <label for="username" class="form-label">User Name</label>
+      <input
+        name="username"
+        #username_="ngModel"
+        [(ngModel)]="username"
+        id="username"
+        type="text"
+        class="form-control"
+        required
+        placeholder="Username"
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="username_.touched && username_.invalid"
+    >
+      Please enter your Username.
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        name="password"
+        #password_="ngModel"
+        [(ngModel)]="password"
+        id="password"
+        type="password"
+        class="form-control"
+        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+        required
+        placeholder="Password"
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="password_.touched && password_.invalid"
+    >
+      Password should contain at least 8 character, 1 number and 1 special
+      character.
+    </div>
+    <div class="mb-3">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="dropdownCheck2" />
+        <label class="form-check-label" for="dropdownCheck2">
+          Remember me
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+      LogIn
+    </button>
+    |
+    <a routerLink="/signup">Sign up</a>
+    <div
+      *ngIf="!loginStatus"
+      [style.display]="showMessage"
+      [class.error]="!loginStatus"
+    >
+      Your login credentials are incorect.
+    </div>
+  </form>
+</div>

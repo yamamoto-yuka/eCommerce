@@ -1,0 +1,72 @@
+
+a{
+  font-family:'Epilogue', sans-serif;;
+  font-size: 2rem;
+  color: #030a8c !important;
+}
+a:hover{
+  color: #fff !important;
+}
+header{
+  background-color: #a69b03;
+}
+
+.navbar {
+  padding: 0 30px;
+}
+.heder__brand {
+  height: 120px;
+  padding: 0;
+  z-index: 100;
+}
+.header__logo {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+.header-heroimg {
+  text-align: center;
+  position: relative;
+}
+.header-heroimg img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.header-heroimg button,
+.header-heroimg h1 {
+  position: absolute;
+}
+.header-heroimg h1 {
+  top: 30%;
+  left: 10%;
+  font-size: 64px;
+  font-weight: bold;
+  color: #fff;
+}
+.header-heroimg button {
+  top: 60%;
+  left: 10%;
+}
+.header-ads {
+  height: 20px;
+
+}
+
+.btn-outline-success {
+  color: #4d77ba !important;
+  border-color: #4d77ba !important;
+}
+
+@media (max-width: 375px) {
+  .header-heroimg {
+    height: 500px;
+  }
+  .header-heroimg img {
+    object-fit: cover;
+  }
+  .header-heroimg h1 {
+    font-size: 32px;
+  }
+}
